@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin_UI.Views.SignUpPage" Title="Sign Up"
+             xmlns:viewModels="clr-namespace:Xamarin_UI.ViewModels">
+
+    <ContentPage.BindingContext>
+        <viewModels:MainViewModel>
+
+        </viewModels:MainViewModel>
+    </ContentPage.BindingContext>
+
+
+    <ScrollView>
+        <Grid Padding="10,10,10,10">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="70"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Image  Source="intec.jpg" HeightRequest="150" WidthRequest="150" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="6" Grid.RowSpan="2"/>
+
+
+
+            <Frame  HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="50" Padding="5" BorderColor="Transparent" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="1">
+                <Image Source="user.jpg" Aspect="AspectFill" Margin="0"/>
+            </Frame>
+            <Entry x:Name="nameEntry" Text="{Binding Name}" HorizontalOptions="FillAndExpand" Placeholder="Name" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="5"/>
+
+
+
+            <Frame HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="50" Padding="5" BorderColor="Transparent" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="1">
+                <Image Source="loginUser.jpg" Aspect="AspectFill" Margin="0" />
+            </Frame>
+            <Entry x:Name="emailEntry" Text="{Binding Username}" HorizontalOptions="FillAndExpand" Placeholder="Email" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="5"/>
+
+
+
+
+            <Frame BackgroundColor="Red" Padding="0" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="50" CornerRadius="30" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="1">
+                <Image Source="redPadlock.jpg" Aspect="AspectFill" Margin="0"/>
+            </Frame>
+
+            <Entry x:Name="passwordEntry" IsPassword="True" Text="{Binding Password}" HorizontalOptions="FillAndExpand" Placeholder="Password" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="5"/>
+
+
+
+            <Frame BackgroundColor="Red" HeightRequest="0" WidthRequest="40" CornerRadius="100" Padding="0" Margin="5" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="1">
+            </Frame>
+
+            <Entry x:Name="passwordConfirmEntry" IsPassword="True" Text="{Binding PasswordConfirm}" HorizontalOptions="FillAndExpand" Placeholder="Password Confirm" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="5"/>
+
+
+
+            <Button Text="Sign Up" BackgroundColor="Red" TextColor="White" CornerRadius="30" Margin="10" Command="{Binding SignUpCommand}" IsEnabled="True" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="6" />
+
+        </Grid>
+    </ScrollView>
+</ContentPage>
